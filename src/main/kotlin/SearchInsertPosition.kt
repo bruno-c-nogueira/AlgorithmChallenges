@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/search-insert-position/
 class SearchInsertPosition {
     fun searchInsert(nums: IntArray, target: Int): Int {
         var middlePointer = nums.size / 2
