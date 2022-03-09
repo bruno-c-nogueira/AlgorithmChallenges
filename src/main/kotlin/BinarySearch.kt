@@ -5,7 +5,6 @@ class BinarySearch {
         var rightPointer = array.size - 1
         // time O(log(n))
         while (array.size > middlePosition) {
-            println("passei")
             val middleElement = array[middlePosition]
 
             if (middleElement == target) return middlePosition
