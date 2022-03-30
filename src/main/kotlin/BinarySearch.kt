@@ -1,5 +1,5 @@
-class BinarySearch {
-    fun findByBinarySearch(array: Array<Int>, target: Int): Int {
+class BinarySearch: Binary {
+    override fun findByBinarySearch(array: Array<Int>, target: Int): Int {
         var middlePosition = array.size / 2
         var leftPointer = 0
         var rightPointer = array.size - 1
