@@ -1,34 +1,35 @@
+//https://leetcode.com/problems/valid-parentheses/
 class ValidParentheses {
-    //TODO not working yet, think more
+    private companion object{
+        private const val PAREN_OPEN1 = '('
+        private const val PAREN_OPEN2 = '['
+        private const val PAREN_OPEN3 = '{'
+        private const val PAREN_CLOSED1 = ')'
+        private const val PAREN_CLOSED2 = ']'
+        private const val PAREN_CLOSED3 = '}'
+
+    }
     fun isValid(s: String): Boolean {
-        try {
-            for (i in s.indices) {
-                if (s[i].toString() == "(" && s[i + 1].toString() != ")") {
-                    return false
-                }
-                if (s.lastIndex >= i+3 ){
+        val stack = StackImpl<Char>()
 
-                if (s[i].toString() == "[" &&( s[i + 1].toString() != "]" &&
-                    s[i + 3].toString() != "]")) {
-                    return false
-                }
-                }
-                if (s.lastIndex >= i+5 ) {
-
-                    if (s[i].toString() == "{" &&(
-                        s[i + 1].toString() != "}" &&
-                        s[i + 3].toString() != "}" &&
-                        s[i + 5].toString() != "}")
-                    ) {
+        for (ch in s){
+            when (ch){
+                PAREN_OPEN1 -> stack.push(PAREN_CLOSED1)
+                PAREN_OPEN2 -> stack.push(PAREN_CLOSED2)
+                PAREN_OPEN3 -> stack.push(PAREN_CLOSED3)
+                else -> {
+                    if (stack.isEmpty){
+                        return false
+                    }
+                    if (stack.pop() != ch){
                         return false
                     }
                 }
-
             }
-            return true
-
-        } catch (e: Exception) {
+        }
+        if (!stack.isEmpty){
             return false
         }
+        return true
     }
 }

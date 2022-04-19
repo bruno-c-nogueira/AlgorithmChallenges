@@ -10,10 +10,10 @@ class ValidParenthesesTest {
 
 //        assert(validParentheses.isValid("()"))
 //        assert(validParentheses.isValid("()[]{}"))
-//        assert(!validParentheses.isValid("(]"))
-        assert(validParentheses.isValid("{()}"))
-        assert(validParentheses.isValid("{[()]}"))
-        assert(validParentheses.isValid("{[]}"))
-        assert(!validParentheses.isValid("{[)}"))
+        assert(!validParentheses.isValid("(]"))
+//        assert(validParentheses.isValid("{()}"))
+//        assert(validParentheses.isValid("{[()]}"))
+//        assert(validParentheses.isValid("{[]}"))
+//        assert(!validParentheses.isValid("{[)}"))
     }
 }
