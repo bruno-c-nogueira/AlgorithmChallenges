@@ -1,7 +1,7 @@
 import org.junit.Assert.*
 import org.junit.Test
 
-class ReverseLinkedListTest{
+class ReverseLinkedListImplTest{
 
     @Test
     fun `test if NodeList is Revert`(){

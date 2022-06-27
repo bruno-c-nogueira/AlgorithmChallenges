@@ -20,7 +20,7 @@ class SearchInsertPosition {
             }
 
             if(leftPointer > rightPointer){
-                return  if(middleElement >  target) middlePointer else                                          middlePointer +1
+                return  if(middleElement >  target) middlePointer else middlePointer +1
             }
 
             middlePointer = (leftPointer + rightPointer).div(2)
