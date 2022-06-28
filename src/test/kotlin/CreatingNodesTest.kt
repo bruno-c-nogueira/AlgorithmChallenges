@@ -33,4 +33,32 @@ class CreatingNodesTest {
         linked.append(3)
         println(linked.toString())
     }
+
+    @Test
+    fun `insert operations`(){
+        val list = LinkedList<Int>()
+        list.push(3)
+        list.push(2)
+        list.push(1)
+
+        println("Before inserting: $list")
+        var middleNode = list.nodeAt(1)!!
+        for (i in 1..3){
+            middleNode = list.insert(-1 * i, middleNode)
+        }
+        println("After insert $list")
+    }
+
+    @Test
+    fun `pop`(){
+        val list = LinkedList<Int>()
+
+        list.push(3)
+        list.push(2)
+        list.push(1)
+        println("Before popping list: $list")
+        val poppedValue = list.pop()
+        println("After popping list: $list")
+        println("Popped value: $poppedValue")
+    }
 }
