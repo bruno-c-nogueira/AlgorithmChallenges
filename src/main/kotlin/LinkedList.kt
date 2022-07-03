@@ -1,4 +1,4 @@
-class LinkedList<T> : Iterable<T>, Collection<T> {
+class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T> {
     var head: Node<T>? = null
     var tail: Node<T>? = null
 
@@ -23,7 +23,7 @@ class LinkedList<T> : Iterable<T>, Collection<T> {
 
     override fun isEmpty() = size == 0
 
-    override fun iterator(): Iterator<T> {
+    override fun iterator(): MutableIterator<T> {
         return LinkedListIterable(this)
     }
 
