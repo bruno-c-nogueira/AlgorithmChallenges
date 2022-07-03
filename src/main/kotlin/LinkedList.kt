@@ -1,7 +1,7 @@
 class LinkedList<T> {
     var head : Node<T>? = null
     var tail: Node<T>? = null
-    private var size = 0
+    var size = 0
 
     fun isEmpty() = size == 0
 
@@ -64,6 +64,45 @@ class LinkedList<T> {
         if (isEmpty()){
             tail = null
         }
+        return result
+    }
+
+    fun removeLast(): T?{
+        val head = head ?: return null
+
+        if(head.next == null){
+            return pop()
+        }
+
+        size--
+
+        var prev = head
+        var current = head
+        var next = current.next
+
+        while (next != null){
+            prev = current
+            current = next
+            next = current.next
+        }
+        prev.next = null
+        tail = prev
+        this.head
+        return current.value
+    }
+
+    fun removeAfter(node: Node<T>): T?{
+        val result = node.next?.value
+
+        if (node.next == tail) {
+            tail = node
+        }
+
+        if (node.next != null) {
+            size--
+        }
+
+        node.next = node.next?.next
         return result
     }
 }

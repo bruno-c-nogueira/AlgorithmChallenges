@@ -22,6 +22,7 @@ class CreatingNodesTest {
         .push(2)
         .push(3)
         println(linked.toString())
+        assert(linked.size == 3)
     }
 
     @Test
@@ -32,6 +33,7 @@ class CreatingNodesTest {
         linked.append(2)
         linked.append(3)
         println(linked.toString())
+        assert(linked.size == 3)
     }
 
     @Test
@@ -60,5 +62,30 @@ class CreatingNodesTest {
         val poppedValue = list.pop()
         println("After popping list: $list")
         println("Popped value: $poppedValue")
+        assert(list.size == 2)
+
+    }
+
+    @Test
+    fun `remove last item in linked list`(){
+        val linked = LinkedList<Int>()
+        linked.append(1)
+        linked.append(2)
+        linked.append(3)
+        println(linked.toString())
+        linked.removeLast()
+        println(linked.toString())
+    }
+
+    @Test
+    fun `remove after node element`(){
+        val linked = LinkedList<Int>()
+        linked.append(1)
+        linked.append(2)
+        linked.append(3)
+        println("Before removing $linked")
+        val nodeAtIndex = linked.nodeAt(0)
+        linked.removeAfter(nodeAtIndex!!)
+        println("After removing $linked")
     }
 }
