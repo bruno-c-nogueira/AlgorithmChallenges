@@ -100,4 +100,18 @@ class CreatingNodesTest {
             println("Double the linked list value $it is -> ${it * 2}")
         }
     }
+
+    @Test
+    fun `testing the collection contains in linked list`(){
+        val list = LinkedList<Int>()
+        list.append(1)
+        list.append(2)
+        list.append(3)
+        list.removeLast()
+
+        assert( list.contains(1))
+        assert( list.contains(2))
+        assert( !list.contains(3))
+        assert(list.containsAll(listOf(1,2)))
+    }
 }

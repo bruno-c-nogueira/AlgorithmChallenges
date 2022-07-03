@@ -1,10 +1,27 @@
-class LinkedList<T>: Iterable<T> {
-    var head : Node<T>? = null
+class LinkedList<T> : Iterable<T>, Collection<T> {
+    var head: Node<T>? = null
     var tail: Node<T>? = null
-    var size = 0
+
+    override var size = 0
         private set
 
-    fun isEmpty() = size == 0
+    override fun containsAll(elements: Collection<T>): Boolean {
+        for (item in elements) {
+            if (!contains(item)) return false
+        }
+        return true
+    }
+
+    override fun contains(element: T): Boolean {
+        for (item in this) {
+            if (item == element) {
+                return true
+            }
+        }
+        return false
+    }
+
+    override fun isEmpty() = size == 0
 
     override fun iterator(): Iterator<T> {
         return LinkedListIterable(this)
@@ -18,17 +35,17 @@ class LinkedList<T>: Iterable<T> {
         }
     }
 
-    fun push(value: T): LinkedList<T>{
-        head = Node(value = value,next = head)
-        if (tail == null){
+    fun push(value: T): LinkedList<T> {
+        head = Node(value = value, next = head)
+        if (tail == null) {
             tail = head
         }
         size++
         return this
     }
 
-    fun append(value: T){
-        if (isEmpty()){
+    fun append(value: T) {
+        if (isEmpty()) {
             push(value)
             return
         }
@@ -36,46 +53,46 @@ class LinkedList<T>: Iterable<T> {
         tail?.next = Node(value)
 
         tail = tail?.next
-        size ++
+        size++
     }
 
     fun nodeAt(index: Int): Node<T>? {
         var currentNode = head
         var currentIndex = 0
-        while(currentNode != null && currentIndex < index){
+        while (currentNode != null && currentIndex < index) {
             currentNode = currentNode.next
             currentIndex++
         }
         return currentNode
     }
 
-    fun insert(value: T, afterNode: Node<T>): Node<T>{
-        if (tail == afterNode){
+    fun insert(value: T, afterNode: Node<T>): Node<T> {
+        if (tail == afterNode) {
             append(value)
             return tail!!
         }
         val newNode = Node(value, afterNode.next)
         afterNode.next = newNode
-        size ++
+        size++
         return newNode
     }
 
-    fun pop(): T?{
-        if(!isEmpty()){
-            size --
+    fun pop(): T? {
+        if (!isEmpty()) {
+            size--
         }
         val result = head?.value
         head = head?.next
-        if (isEmpty()){
+        if (isEmpty()) {
             tail = null
         }
         return result
     }
 
-    fun removeLast(): T?{
+    fun removeLast(): T? {
         val head = head ?: return null
 
-        if(head.next == null){
+        if (head.next == null) {
             return pop()
         }
 
@@ -85,7 +102,7 @@ class LinkedList<T>: Iterable<T> {
         var current = head
         var next = current.next
 
-        while (next != null){
+        while (next != null) {
             prev = current
             current = next
             next = current.next
@@ -96,7 +113,7 @@ class LinkedList<T>: Iterable<T> {
         return current.value
     }
 
-    fun removeAfter(node: Node<T>): T?{
+    fun removeAfter(node: Node<T>): T? {
         val result = node.next?.value
 
         if (node.next == tail) {
