@@ -88,4 +88,16 @@ class CreatingNodesTest {
         linked.removeAfter(nodeAtIndex!!)
         println("After removing $linked")
     }
+
+    @Test
+    fun `printing doubles`(){
+        val list =  LinkedList<Int>()
+        list.append(0)
+        list.append(1)
+        list.append(2)
+
+        list.forEach {
+            println("Double the linked list value $it is -> ${it * 2}")
+        }
+    }
 }

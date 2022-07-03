@@ -1,9 +1,14 @@
-class LinkedList<T> {
+class LinkedList<T>: Iterable<T> {
     var head : Node<T>? = null
     var tail: Node<T>? = null
     var size = 0
+        private set
 
     fun isEmpty() = size == 0
+
+    override fun iterator(): Iterator<T> {
+        return LinkedListIterable(this)
+    }
 
     override fun toString(): String {
         return if (isEmpty()) {
