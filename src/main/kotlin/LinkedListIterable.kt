@@ -1,17 +1,11 @@
-class LinkedListIterable<T>(private val list: LinkedList<T>) : MutableListIterator<T> {
+class LinkedListIterable<T>(private val list: LinkedList<T>) : MutableIterator<T> {
 
     private var index = 0
     private var lastNode: Node<T>? = null
-    override fun add(element: T) {
-        TODO("Not yet implemented")
-    }
+
 
     override fun hasNext(): Boolean {
         return index < list.size
-    }
-
-    override fun hasPrevious(): Boolean {
-        TODO("Not yet implemented")
     }
 
     override fun next(): T {
@@ -27,17 +21,7 @@ class LinkedListIterable<T>(private val list: LinkedList<T>) : MutableListIterat
         return lastNode!!.value
     }
 
-    override fun nextIndex(): Int {
-        TODO("Not yet implemented")
-    }
 
-    override fun previous(): T {
-        TODO("Not yet implemented")
-    }
-
-    override fun previousIndex(): Int {
-        TODO("Not yet implemented")
-    }
 
     override fun remove() {
         if (index == 0) {
@@ -51,7 +35,4 @@ class LinkedListIterable<T>(private val list: LinkedList<T>) : MutableListIterat
         index--
     }
 
-    override fun set(element: T) {
-        TODO("Not yet implemented")
-    }
 }

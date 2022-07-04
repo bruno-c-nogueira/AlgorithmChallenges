@@ -114,4 +114,53 @@ class CreatingNodesTest {
         assert( !list.contains(3))
         assert(list.containsAll(listOf(1,2)))
     }
+
+    @Test
+    fun `removing elements`(){
+        val list: MutableCollection<Int> = LinkedList()
+        list.add(3)
+        list.add(2)
+        list.add(1)
+        println(list)
+        list.remove(3)
+        println(list)
+    }
+
+    @Test
+    fun `retaining elements`(){
+        val list: MutableCollection<Int> = LinkedList()
+        list.add(3)
+        list.add(2)
+        list.add(1)
+        list.add(0)
+        println(list)
+        list.retainAll(listOf(3,2))
+        println(list)
+    }
+
+    @Test
+    fun `remove all items`(){
+        val list: MutableCollection<Int> = LinkedList()
+        list.add(3)
+        list.add(2)
+        list.add(1)
+        list.add(4)
+        list.add(5)
+
+        println(list)
+        list.removeAll(listOf(3, 4, 5))
+        println(list)
+    }
+    
+    @Test
+    fun `testing removing`(){
+        val linked = LinkedList<Int>()
+        linked.add(1)
+        linked.add(2)
+        linked.add(3)
+        println(linked)
+        linked.remove(3)
+        println(linked)
+    }
+
 }
