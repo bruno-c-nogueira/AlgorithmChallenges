@@ -165,14 +165,22 @@ class CreatingNodesTest {
 
     @Test
     fun `reverse linked list`(){
-
-
         val linked2 = LinkedList<String>()
         linked2.add("a")
         linked2.add("b")
         linked2.add("c")
         println(linked2)
         println(linked2.reverseLinkedList())
+    }
+
+    @Test
+    fun `reverse linked list recursive`(){
+        val linked2 = LinkedList<String>()
+        linked2.add("a")
+        linked2.add("b")
+        linked2.add("c")
+        println(linked2)
+        linked2.printInReverse()
     }
 
 }

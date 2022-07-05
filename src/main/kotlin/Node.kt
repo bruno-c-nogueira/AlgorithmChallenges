@@ -6,4 +6,14 @@ data class Node<T>(val value: T, var next: Node<T>? = null){
             "$value"
         }
     }
+
+    fun printInReverseRecursive(){
+        this.next?.printInReverseRecursive()
+
+        if (this.next != null){
+            print(" -> ")
+        }
+        print(this.value.toString())
+    }
+
 }

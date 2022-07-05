@@ -197,5 +197,8 @@ class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCol
         return prev
     }
 
+    fun printInReverse() {
+        this.nodeAt(0)?.printInReverseRecursive()
+    }
 
 }
