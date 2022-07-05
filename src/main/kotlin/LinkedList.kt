@@ -183,4 +183,19 @@ class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCol
         node.next = node.next?.next
         return result
     }
+
+    fun reverseLinkedList(): Node<T>?{
+        var current = head
+        var  next: Node<T>? = null
+        var  prev: Node<T>? = null
+        while (current != null){
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        }
+        return prev
+    }
+
+
 }
