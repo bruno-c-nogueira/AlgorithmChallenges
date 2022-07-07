@@ -174,13 +174,26 @@ class CreatingNodesTest {
     }
 
     @Test
-    fun `reverse linked list recursive`(){
+    fun `print reverse linked list recursive`(){
         val linked2 = LinkedList<String>()
         linked2.add("a")
         linked2.add("b")
         linked2.add("c")
         println(linked2)
         linked2.printInReverse()
+    }
+
+    @Test
+    fun `find middle of linked list`(){
+        val linked = LinkedList<Int>()
+        linked.add(1)
+        linked.add(2)
+        linked.add(3)
+        linked.add(4)
+
+        val middleElement = linked.middleElementInList()
+        println(middleElement)
+        assert(middleElement == 3)
     }
 
 }

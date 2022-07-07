@@ -201,4 +201,17 @@ class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCol
         this.nodeAt(0)?.printInReverseRecursive()
     }
 
+    fun middleElementInList(): T? {
+        var fast = nodeAt(0)
+        var slow = nodeAt(0)
+        while (fast != null){
+            fast = fast.next
+            if (fast != null){
+                fast = fast.next
+                slow = slow?.next
+            }
+        }
+        return slow?.value
+    }
+
 }
