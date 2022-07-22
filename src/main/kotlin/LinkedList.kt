@@ -68,7 +68,7 @@ class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCol
 
     override fun remove(element: T): Boolean {
         val iterator = iterator()
-        if (head?.value == element){
+        if (head?.value == element) {
             iterator.remove()
             return true
         }
@@ -165,7 +165,6 @@ class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCol
         }
         prev.next = null
         tail = prev
-        this.head
         return current.value
     }
 
@@ -184,11 +183,11 @@ class LinkedList<T> : Iterable<T>, Collection<T>, MutableIterable<T>, MutableCol
         return result
     }
 
-    fun reverseLinkedList(): Node<T>?{
+    fun reverseLinkedList(): Node<T>? {
         var current = head
-        var  next: Node<T>? = null
-        var  prev: Node<T>? = null
-        while (current != null){
+        var next: Node<T>? = null
+        var prev: Node<T>? = null
+        while (current != null) {
             next = current.next
             current.next = prev
             prev = current

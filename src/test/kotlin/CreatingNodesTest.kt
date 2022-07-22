@@ -196,4 +196,21 @@ class CreatingNodesTest {
         assert(middleElement == 3)
     }
 
+    @Test
+    fun `merge two linked list`(){
+        val linked = LinkedList<Int>()
+        linked.add(1)
+        linked.add(4)
+        linked.add(10)
+        linked.add(11)
+
+        val linked2 = LinkedList<Int>()
+        linked2.add(1)
+        linked2.add(2)
+        linked2.add(3)
+        linked2.add(6)
+
+        println(linked2.head?.let { linked.mergeTwoLinkedList(it) })
+    }
+
 }
