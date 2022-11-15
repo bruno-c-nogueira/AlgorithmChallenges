@@ -38,7 +38,6 @@ class MinStack() {
 
 fun main() {
     val minStack = MinStack()
-    minStack
     minStack.push(-2)
     minStack.push(0)
     minStack.push(-3)
