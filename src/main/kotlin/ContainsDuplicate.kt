@@ -1,3 +1,5 @@
+import kotlin.math.pow
+
 //https://leetcode.com/problems/contains-duplicate/
 class ContainsDuplicate {
     fun containsDuplicate(nums: IntArray): Boolean {
@@ -9,6 +11,7 @@ class ContainsDuplicate {
                 map[it] = 1
             }
         }
+        1.0.pow()
         return false
     }
 
