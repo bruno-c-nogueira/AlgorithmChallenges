@@ -11,7 +11,6 @@ class ContainsDuplicate {
                 map[it] = 1
             }
         }
-        1.0.pow()
         return false
     }
 
