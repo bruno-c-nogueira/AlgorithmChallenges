@@ -1,8 +1,8 @@
 class ReverseLinkedList {
-    fun reverseNode( node: ListNode?): ListNode? {
+    fun reverseNode(node: ListNode?): ListNode? {
         var prev: ListNode? = null
-        var current = node
         var next: ListNode? = null
+        var current = node
 
         while (current != null){
             next = current.next
